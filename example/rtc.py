@@ -16,27 +16,32 @@ import sys
 
 rtc = FaBoRTC_PCF2129.PCF2129()
 
-# 日付時刻の設定
-print "set date/time"
-rtc.setDate(
-    2016, # Years
-    7,    # months
-    8,    # days
-    12,   # hours
-    1,    # minutes
-    50)   # seconds
 
-while True:
-    # 日付時刻の取得
-    now = rtc.now()
+try:
+    # 日付時刻の設定
+    print "set date/time"
+    rtc.setDate(
+        2016, # Years
+        7,    # months
+        8,    # days
+        12,   # hours
+        1,    # minutes
+        50)   # seconds
 
-    # 日付時刻の表示
-    sys.stdout.write(str(now['year'])  + '/')
-    sys.stdout.write(str(now['month']).zfill(2) + '/')
-    sys.stdout.write(str(now['day']).zfill(2)   + ' ')
+    while True:
+        # 日付時刻の取得
+        now = rtc.now()
 
-    sys.stdout.write(str(now['hour']).zfill(2)    + ':')
-    sys.stdout.write(str(now['minute']).zfill(2)  + ':')
-    sys.stdout.write(str(now['second']).zfill(2))
-    print
-    time.sleep(1)
+        # 日付時刻の表示
+        sys.stdout.write(str(now['year'])  + '/')
+        sys.stdout.write(str(now['month']).zfill(2) + '/')
+        sys.stdout.write(str(now['day']).zfill(2)   + ' ')
+
+        sys.stdout.write(str(now['hour']).zfill(2)    + ':')
+        sys.stdout.write(str(now['minute']).zfill(2)  + ':')
+        sys.stdout.write(str(now['second']).zfill(2))
+        print
+        time.sleep(1)
+
+except KeyboardInterrupt:
+    sys.exit()

@@ -27,13 +27,16 @@ WEEKDAYS      = 0x07
 MONTHS        = 0x08
 YEARS         = 0x09
 
+## smbus
 bus = smbus.SMBus(1)
 
-#  FaBo RTC I2C Controll class
+## FaBo RTC I2C Controll class
 class PCF2129:
+
     ## Constructor
-    def __init__(self):
-        self.address = SLAVE_ADDRESS
+    #  @param [in] address PCF2129 I2C slave address default:0x51
+    def __init__(self, address=SLAVE_ADDRESS):
+        self.address = address
 
     ## Configure Device
     def configure(self):
