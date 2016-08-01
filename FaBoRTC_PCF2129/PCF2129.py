@@ -1,6 +1,6 @@
 # coding: utf-8
-## @package FaBoRTC_PCF2129
-#  This is a library for the FaBo RTC I2C Brick.
+## @package PCF2129
+#  This is a FaBoRTC_PCF2129 library for the FaBo RTC I2C Brick.
 #
 #  http://fabo.io/215.html
 #
