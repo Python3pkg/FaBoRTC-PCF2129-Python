@@ -19,7 +19,7 @@ rtc = FaBoRTC_PCF2129.PCF2129()
 
 try:
     # 日付時刻の設定
-    print "set date/time"
+    print("set date/time")
     rtc.setDate(
         2016, # Years
         7,    # months
@@ -40,7 +40,7 @@ try:
         sys.stdout.write(str(now['hour']).zfill(2)    + ':')
         sys.stdout.write(str(now['minute']).zfill(2)  + ':')
         sys.stdout.write(str(now['second']).zfill(2))
-        print
+        print()
         time.sleep(1)
 
 except KeyboardInterrupt:
